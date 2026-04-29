@@ -1,0 +1,20 @@
+fieldset {
+  width: 500px;
+  height: 200px;
+  margin: 0 auto;
+}
+legend {
+  margin: 0 auto;
+}
+.failed {
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  left: 670px;
+  margin-bottom: 20px;
+}
+.form {
+  height: 100px;
+}
