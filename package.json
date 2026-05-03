@@ -1,0 +1,12 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "i try to learn node",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "test_node.js",
+  "scripts": {
+    "start": "node test_node.js"
+  }
+}
