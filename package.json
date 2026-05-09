@@ -8,5 +8,8 @@
   "main": "test_node.js",
   "scripts": {
     "start": "node test_node.js"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0"
   }
 }

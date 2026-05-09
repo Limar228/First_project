@@ -4,14 +4,7 @@ const fs = require('fs');
 let server = http.createServer((req, res) => {
   res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); //text/html. WHAT IS THAT
 
-  if (req.url === '/') {
-    // also learn url and i maked url in the index on the form
-    fs.createReadStream('./index.html').pipe(res); //learn stream
-  } else if (req.url === '/about') {
-    fs.createReadStream('./registration.html').pipe(res);
-  } else {
-    //here "ВЫ ПЕРЕШЛИ НА НЕПРАВИЛЬНУЮ СТРАНИЦУ"
-  }
+  res.end('dasd');
 });
 
 const PORT = 8080;
