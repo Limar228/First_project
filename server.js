@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true })); // важно!
 
@@ -37,6 +37,8 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/users', async (req, res) => {
+  // Это коллбек отрабатывает по маршруту
+  //routers and rest api, tcp packets, ❓ stream → chunks → buffer → JSON.parse
   const data = await getUsers();
   res.status(200).json(data);
 });
