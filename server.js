@@ -1,9 +1,14 @@
 const express = require('express');
 const fs = require('fs/promises');
+const path = require('path');
 
 const app = express();
 
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.urlencoded({ extended: true })); // важно!
 
 async function getUsers() {
   const data = await fs.readFile('users.json', 'utf-8');
@@ -17,6 +22,24 @@ async function writeUser(param) {
     'utf-8',
   );
 }
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages', 'index.html'));
+});
+
+app.get('/reg', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages', 'registration.html'));
+});
+
+app.post('/login', (req, res) => {
+  console.log(req.body); // <- тут данные формы
+  res.send('OK');
+});
+
+app.get('/users', async (req, res) => {
+  const data = await getUsers();
+  res.status(200).json(data);
+});
 
 app.get('/users', async (req, res) => {
   const data = await getUsers();

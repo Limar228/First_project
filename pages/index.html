@@ -6,17 +6,17 @@
     <title>to-do list</title>
   </head>
   <body>
-    <script src="app.js"></script>
     <form action="/login" method="post">
       <legend>Можете записать ваше задание</legend>
       <div>
         <label for="task_one">Введите задания</label>
-        <input type="text" />
+        <input type="text" name="task" />
       </div>
-      <button>Готово</button>
+      <button type="submit">Готово</button>
       <button type="reset">Отмена</button>
     </form>
-    <button type="button">Ваши задания</button>
-    <label>СЕРВЕР + РАБОТА СО СТРАНИЦЕЙ</label>
+    <button>Ваши задания</button>
+    <button type="button" onclick="location.href = '/reg'">Регистрация</button>
+    <script src="app.js"></script>
   </body>
 </html>

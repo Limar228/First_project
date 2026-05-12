@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "test_node.js",
   "scripts": {
-    "dev": "nodemon test_node.js"
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "cross-env": "^10.1.0",
