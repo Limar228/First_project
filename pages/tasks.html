@@ -6,13 +6,13 @@
     <title>tasks</title>
   </head>
   <body>
+    <h2 id="title"></h1>
     <script>
-      fetch("/api/users")
+      fetch("/api/tasks")
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
-          // работа с данными на странице
-        });
+          document.getElementById("title").textContent =`Задания: ${data[0].task}`;
+        });//че это
     </script>
   </body>
 </html>
