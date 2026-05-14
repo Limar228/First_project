@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>to-do list</title>
   </head>
   <body>
@@ -15,7 +16,9 @@
       <button type="submit">Готово</button>
       <button type="reset">Отмена</button>
     </form>
-    <button>Ваши задания</button>
+    <button type="button" onclick="location.href = '/tasks'">
+      Ваши задания
+    </button>
     <button type="button" onclick="location.href = '/reg'">Регистрация</button>
     <script src="app.js"></script>
   </body>
