@@ -1,0 +1,76 @@
+Учить сервер логику, клиент - сервер( tcp packets, ❓ stream → chunks → buffer → JSON.parse)
+reverse engineering
+Структурнее понимать что происходит в общениее клиент-сервер
+Учить DOM
+routes - controller - service
+
+express
+
+middleware = ?
+req/res = more info
+express.json()
+logging
+auth middleware
+error middleware
+REST API
+CRUD
+REST conventions
+Структура проекта
+controllers
+routes
+services
+
+Environment Variables
+.env
+
+WebSockets
+
+Node.js internals
+
+Очень важно:
+
+streams
+buffers
+fs
+process
+threads
+event loop
+
+HTTP
+
+Обязательно:
+
+headers
+cookies
+caching
+TLS/HTTPS
+HTTP/2
+
+Linux
+
+Нужно уметь:
+
+работать с сервером
+systemctl
+nginx
+ssh
+logs
+
+
+
+Controller
+exports.createTask = async (req, res) => {
+  const task = await taskService.create(req.body)
+
+  res.status(201).json(task)
+}
+Service
+exports.create = async (data) => {
+  if (!data.title) {
+    throw new Error('Title required')
+  }
+
+  return db.task.create({
+    data
+  })
+}
