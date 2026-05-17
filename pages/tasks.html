@@ -6,13 +6,19 @@
     <title>tasks</title>
   </head>
   <body>
-    <h2 id="title"></h1>
+    <h2>Список заданий:</h2>
     <script>
-      fetch("/api/tasks")
+      fetch('/api/tasks')
         .then((res) => res.json())
         .then((data) => {
-          document.getElementById("title").textContent =`Задания: ${data[0].task}`;
-        });//че это
+          for (const element of data) {
+            const div = document.createElement('div');
+            div.textContent = element.task;
+            document.body.appendChild(div);
+          }
+
+          console.log(data[0].task);
+        }); //че это
     </script>
   </body>
 </html>
